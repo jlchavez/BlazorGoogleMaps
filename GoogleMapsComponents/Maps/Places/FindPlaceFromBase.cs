@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoogleMapsComponents.Maps.Places;
+﻿namespace GoogleMapsComponents.Maps.Places;
 
 public abstract class FindPlaceFromBase
 {

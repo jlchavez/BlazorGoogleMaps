@@ -86,11 +86,17 @@ public class DrawingManager : EventEntityBase
     /// Sets the DrawingManager's options.
     /// </summary>
     /// <param name="options"></param>
-    public Task SetOptions(DrawingManagerOptions options)
+    public Task SetOptions(DrawingManagerOptions options, bool indirect = true)
     {
+        if (!indirect)
+            return _jsObjectRef.InvokeAsync( "setOptions", options);
+        var jso = new System.Text.Json.JsonSerializerOptions()
+        {
+        };
+        var _json = System.Text.Json.JsonSerializer.Serialize(options, jso);
         return _jsObjectRef.InvokeAsync(
             "setOptions",
-            options);
+            _json);
     }
 
     public async Task AddOverlayCompleteListener(Action<OverlayCompleteEvent> action)

@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
-using GoogleMapsComponents.Maps.Places;
 using GoogleMapsComponents.Maps.Extension;
 
 namespace GoogleMapsComponents.Maps.KmlLayer;
